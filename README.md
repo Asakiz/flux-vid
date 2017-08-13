@@ -4,7 +4,7 @@ Possuí as seguintes ferramentas:
 * Sistema de busca
 * Catálogo de vídeos
 
-## Bugs and Issues
+## Bugs e perguntas
 
 Caso haja algum bug, por favor! Reporte, para que possamos resolver.
 
