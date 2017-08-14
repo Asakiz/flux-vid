@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 
+<html>
+<style>
+body{
+
+    background-image: url("http://wallpapercave.com/wp/aLg4A6m.png");
+    background-position: center;
+    background-attachment: fixed;
+}
+
+ video {
+
+    width: 640px;
+    height: 360px;
+    position: absolute;
+}
+
+</style>
+
 <head>
 
-
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -17,13 +34,9 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
-
-    <!-- Custom styles for this template -->
-    <link href="css/grayscale.min.css" rel="stylesheet">
-
 </head>
 
-<body id="page-top">
+<body onload="setupVideo()">
 
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <a class="navbar-brand" href="index.html">Home</a>
@@ -36,19 +49,29 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <h1 class="brand-heading">Vídeos disponíveis</h1>
-                        
-                        <p>Shooting Stars</p>
-                        <iframe src="https://www.youtube.com/embed/feA64wXhbjo"
-                        width="560" height="315" frameborder="0" allowfullscreen></iframe>
-
-                        <p>Rick Astley - Never Gonna Give up</p>
-                        <iframe src="https://www.youtube.com/embed/Rqz--Rf6IIo"
-                        width="560" height="315" frameborder="0" allowfullscrenn></iframe>
-
+                        <p>Vídeo:</p>
+                        <video class='center' data-dashjs-player autoplay src="https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd" controls>
+                        </video>
                     </div>
                 </div>
             </div>
         </div>
     </header>
   </body>
+
+  <script src="yourPathToDash/dash.all.min.js"></script>
+  <script>
+    // setup the video element and attach it to the Dash player
+    function setupVideo() {
+
+        var url = "http://wams.edgesuite.net/media/MPTExpressionData02/BigBuckBunny_1080p24_IYUV_2ch.ism/manifest(format=mpd-time-csf)";
+        var context = new Dash.di.DashContext();
+        var player = new MediaPlayer(context);
+        player.startup();
+        player.attachView(document.querySelector("#videoplayer"));
+        player.attachSource(url);
+        
+    }
+
+    </script>
+</html>
