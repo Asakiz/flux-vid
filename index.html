@@ -119,6 +119,27 @@ a {
     border: 0;
 }
 
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
 </style>
 
     <meta charset="utf-8">
@@ -203,13 +224,9 @@ a {
             <div class="col-lg-8 mx-auto">
                 <h2>Buscar por vídeo</h2>
                 <p>Digite o nome do vídeo que deseja buscar no site:</p>
-                <div id="form-wrapper">
-                <form id="form-wrapper" method="get" action="https://www.youtube.com/embed/feA64wXhbjo">
-                    <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="buscar" class="tfbutton">
-                </form>
-             <div class="tfclear"></div>
-            </div>
-
+                <input type="text" id="inputText" value="">
+                <button onclick="checkTextField()">Buscar</button>
+                <p></p>
                 <p><br>Ou veja no catálogo de vídeos disponíveis:</br></p>
                 <button type="button" onclick= "location.href ='index2.html';">Ver catálogo</button>
             </div>
@@ -244,13 +261,19 @@ a {
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
-
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
     <script src="js/checktextfield.js"></script>
-   
+
+    <script>
+
+    function checkTextField() {
+        document.getElementById("inputText").innerText =
+        (inputText.value === "movimento") ? window.location.href ="index2.html" : teste();
+    }
+
+    </script>
+
 </body>
 
 </html>
