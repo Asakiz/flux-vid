@@ -60,6 +60,9 @@ body {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/smoothness/jquery-ui.css">
+    <link rel="shortcut icon" href="../favicon.ico"> 
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="js/modernizr.custom.js"></script>
 
 </head>
 
@@ -125,7 +128,7 @@ body {
                 <input class="search" type="text" id="inputText" value="">
                 <button onclick="checkTextField()">Buscar</button>
                 <p><br>Ou veja no catálogo de vídeos disponíveis:</br></p>
-                <button type="button" onclick= "location.href ='index2.html';">Ver catálogo</button>
+                   <button class="btn btn-1 btn-1a" onclick="location.href ='index3.html';"=>Ver catálogo</button>
             </div>
         </div>
     </section>
@@ -164,10 +167,15 @@ body {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 
     <script>
-
     function checkTextField() {
         document.getElementById("inputText").innerText =
         (inputText.value === "") ? alert("Por favor, digite algo para pesquisar!") :
+
+         document.getElementById("inputText").innerText =
+        (inputText.value === "algo") ? alert("Muito engraçadinho, digite novamente!") :
+
+        document.getElementById("inputText").innerText =
+        (inputText.value === "novamente") ? alert("Esse é o último aviso!") :
 
         document.getElementById("inputText").innerText =
         (inputText.value === "movimento") ? window.location.href ="index2.html" : alert("Não existe nenhum vídeo com esse nome!")
